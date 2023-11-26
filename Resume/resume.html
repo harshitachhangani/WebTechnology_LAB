@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Harshita Chhangani - Resume</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add Font Awesome CDN link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+header {
+  background-color: #1a1a28;
+
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header h6 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* Navbar */
+nav {
+  background-color: #333;
+  overflow: hidden;
+  float: left;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+/* Main content */
+main {
+  padding: 80px;
+  margin-top: 80px;
+}
+
+main h3 {
+  margin-top: 80px;
+  font-size: 24px;
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Style the footer */
+footer {
+  background-color: #1a1a28;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  nav, main {
+    width: 100%;
+  }
+}
+
+
+
+/* Skills section */
+#skills {
+  padding-top: 20px;
+  border-top: 2px solid #1a1a28;
+}
+
+.skill-category {
+  margin-top: 20px;
+}
+
+.skill-category h4 {
+  
+  color: #1a1a28;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skill {
+  width: 30%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.skill-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a28;
+}
+
+
+#extra-curricular ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#extra-curricular li {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+
+#extra-curricular li::before {
+  content: "\f058"; /* Font Awesome bullet icon code for "fas fa-check-circle" */
+  font-family: FontAwesome;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #1a1a28;
+}
+
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#contact li {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+
+#contact li::before {
+  font-family: FontAwesome;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+#contact .fa-phone-alt::before {
+  content: "\f879"; /* Font Awesome icon code for "fas fa-phone-alt" */
+  color: #1a1a28;
+}
+
+#contact .fa-envelope::before {
+  content: "\f0e0"; /* Font Awesome icon code for "fas fa-envelope" */
+  color: #1a1a28;
+}
+
+#contact .fa-map-marker-alt::before {
+  content: "\f3c5"; /* Font Awesome icon code for "fas fa-map-marker-alt" */
+  color: #1a1a28;
+}
+
+#contact .fa-linkedin::before {
+  content: "\f08c"; /* Font Awesome icon code for "fab fa-linkedin" */
+  color: #1a1a28;
+}
+
+#contact .fa-github::before {
+  content: "\f09b"; /* Font Awesome icon code for "fab fa-github" */
+  color: #1a1a28;
+}
+
+#contact .fa-instagram::before {
+  content: "\f16d"; /* Font Awesome icon code for "fab fa-instagram" */
+  color: #1a1a28;
+}
+
+img.profile-picture {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+/* Style the footer */
+footer {
+  background-color: #1a1a28;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.footer-content,
+.footer-social {
+  margin-bottom: 10px;
+}
+
+.footer-content p,
+.footer-social p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contact-links,
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  display: flex; /* Use flexbox to arrange icons in a single line */
+  justify-content: center; /* Center icons horizontally */
+}
+
+.contact-links li,
+.social-links li {
+  margin-bottom: 5px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Additional styles to make icons visible in the footer */
+.social-links a:hover {
+  color: #42b983;
+}
+
+.social-links a:active {
+  color: #1e7047;
+}
+
+.fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #333;
+        padding: 10px 0;
+        color: #fff;
+    }
+    .fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }
+    
+    
+
+</style>
+
+
+</head>
+<body>
+
+<div class="fixed-header" id="myHeader">
+
+<header >
+  <h2>Harshita Chhangani</h2>
+  <h6>Web Developer | App Developer | Freelancer</h6>
+  <img class="profile-picture" src="myPic2.jpeg" alt="Profile Picture">
+</header>
+
+
+
+<nav>
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#qualifications">Qualifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#extra-curricular">Extra Curricular</a></li>
+    <li><a href="#contact">Contact Info</a></li>
+  </ul>
+</nav>
+</div>
+
+
+<main>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>Hi there! I'm Harshita Chhangani, a passionate and dedicated web and app developer with a flair for creating dynamic and user-friendly digital experiences. My journey into the world of programming began with curiosity and soon turned into a full-fledged passion.
+      My experience in web development has equipped me with a solid foundation in HTML, CSS, and JavaScript, React, Python-Django while my expertise in app development spans across platforms like Flutter.
+      Thank you for visiting my profile, and I look forward to connecting with like-minded individuals and organizations to embark on exciting ventures together.
+    </p>
+  </section>
+
+
+
+
+  <section id="qualifications">
+    <h3>Qualifications</h3>
+    <h4>Vishwakarma Institute of Technology, Pune - B.Tech in Computer Science </h4>
+        <p>Graduation Year: 2022-2025</p>
+        <p>During my time at VIT, I pursued a Bachelor's degree in Computer Science and Engineering. This enriching journey exposed me to a diverse range of computer science disciplines, from algorithms and data structures to software engineering and artificial intelligence. The college's vibrant and innovative atmosphere fostered my passion for problem-solving and creativity, encouraging me to explore cutting-edge technologies and programming paradigms. I actively participated in hackathons, coding competitions, and technical symposiums, honing my skills and collaborating with talented peers.</p>
+        
+        <h4>Government Polytechnic, Amravati - Diploma in CS</h4>
+        <p>Completion Year: 2019-2022</p>
+        <p>At GPA, I completed a comprehensive Diploma in Web Development and Design. This program allowed me to delve deep into the realm of front-end and back-end web development. Through hands-on projects and real-world challenges, I gained valuable expertise in building responsive and visually appealing websites, user interfaces, and interactive web applications. The experience at GPA further fueled my passion for creating seamless digital experiences that leave a lasting impact on users.</p>
+        
+        <h4>Bhawarilal Samra English High School - High School</h4>
+        <p>Completion Year: 2013-2019</p>
+        
+    </section>
+
+ 
+    <section id="skills">
+      <h3>Skills</h3>
+      <div class="skill-category">
+        <h4>Technical Skills</h4>
+        <div class="skills-list">
+          <div class="skill">
+            <span class="skill-name">HTML & CSS</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">React</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Node.js</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Express.js</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">MongoDB</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Python-Django</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Tailwind CSS</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Java</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">PHP</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">PHP-CodeIgniter</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="skill-category">
+        <h4>App Development Skills</h4>
+        <div class="skills-list">
+          <div class="skill">
+            <span class="skill-name">Flutter</span>
+          </div>
+          
+        </div>
+      </div>
+  
+      <div class="skill-category">
+        <h4>Non-Technical Skills</h4>
+        <div class="skills-list">
+          <div class="skill">
+            <span class="skill-name">Leadership</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Communication</span>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Teamwork</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3>Projects</h3>
+  
+      <div class="project">
+        <h4>Space Biology Superhero Website</h4>
+        <p>
+          Space Biology Superhero is a fictional superhero website created for a web development competition. The website showcases information about superheroes with space-related powers and their adventures. It was built using HTML, CSS, and JavaScript, with a mobile-responsive design.
+        </p>
+        <div class="project-links">
+
+          <a href="https://harshitachhangani.github.io/spacebiologysuperhero.github.io/" target="_blank">View Project</a>
+          <a href="https://github.com/harshitachhangani/spacebiologysuperhero.github.io" target="_blank">GitHub Repo</a>
+        </div>
+        <!-- <img src="space.png" alt="Space Biology Superhero Website"> -->
+      </div>
+  
+      <div class="project">
+        <h4>Movies App in JavaScript</h4>
+        <p>
+          The Movies App is a web application that allows users to search for movies, view details, and watch trailers. It was developed using JavaScript and integrates with the Movie Database (TMDB) API to fetch movie data. The app provides a user-friendly interface and a seamless movie browsing experience.
+        </p>
+        <div class="project-links">
+          <a href="https://movies-guide-app.netlify.app/" target="_blank">View Project</a>
+          <a href="https://github.com/harshitachhangani/MoviesApp" target="_blank">GitHub Repo</a>
+        </div>
+        <!-- <img src="movie.png" alt="Movies App in JavaScript"> -->
+      </div>
+
+  
+      <div class="project">
+        <h4>Weather App in React</h4>
+        <p>
+          The Weather App is a React application that allows users to check the weather forecast for different locations. It utilizes the OpenWeatherMap API to fetch weather data and displays it in a user-friendly manner. The app also features geolocation to get the user's current weather.
+        </p>
+        <div class="project-links">
+          <a href="https://my-weather-app-search.netlify.app/" target="_blank">View Project</a>
+          <a href="https://github.com/harshitachhangani/weather_app" target="_blank">GitHub Repo</a>
+        </div>
+
+        <!-- <img src="weather.png" alt="Weather App in React"> -->
+      </div>
+    </section>
+  
+    <section id="extra-curricular">
+      <h3>Extra Curricular</h3>
+      <ul>
+        <li>Participated in Various Paper Presentations</li>
+        <li>Attended and Participated in Vidarbha MUN at Sipna College of Engineering, Amravati</li>
+        <li>Participated in Space Apps Challenge Hackathon sponsored by NASA</li>
+        <li>Completed Hacktoberfest sponsored by GitHub & Digital Ocean</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h3>Contact Info</h3>
+      <p><i class="fas fa-phone-alt"></i> Mobile: 9404027471</p>
+      <p><i class="fas fa-envelope"></i> Email: harshitachhangani05@gmail.com      </p>
+      <p><i class="fas fa-map-marker-alt"></i> Address: Vishnu Nagar, Nr. New
+        Krushnarpan Co. , Amravati</p>
+      <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/harshita-chhangani-a82732257/" target="_blank">linkedin.com/in/harshita</a></p>
+      <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/harshitachhangani" target="_blank">github.com/harshita</a></p>
+      <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/harshita" target="_blank">instagram.com/harshita</a></p>
+    </section>
+
+    
+  
+</main>
+<footer>
+  <div class="footer-content">
+    <p>Contact Me:</p>
+    <ul class="contact-links">
+      <li><i class="fas fa-envelope"></i> Email: harshita@example.com</li>
+      <li><i class="fas fa-phone-alt"></i> Phone: +1 (123) 456-7890</li>
+    </ul>
+  </div>
+  <div class="footer-social">
+    <p>Follow Me:</p>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/in/harshita" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/harshita" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/harshita" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </div>
+  
+</footer>
+
+
+
+</body>
+</html>
