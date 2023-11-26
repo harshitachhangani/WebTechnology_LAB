@@ -1,11 +1,9 @@
-<!-- catalogue.php -->
-
 <?php
+// Start the session
 session_start();
 
-// Check if the user is logged in
+// Check if the user is not logged in, redirect to login page
 if (!isset($_SESSION["username"])) {
-    // Redirect to the login page if not logged in
     header("Location: login.html");
     exit();
 }
@@ -22,11 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Display the welcome message and logout link
-echo "<h2>Welcome, " . $_SESSION["username"] . "!</h2>";
-echo "<p><a href='logout.php'>Logout</a></p>";
-
-// Display the catalog with Buy option
+// Fetch books from the database
 $sql = "SELECT * FROM books";
 $result = $conn->query($sql);
 ?>
@@ -41,34 +35,51 @@ $result = $conn->query($sql);
 </head>
 <body>
     <header>
-        <h1>Online Book Store</h1>
+        <div class="container">
+            <h1>Online Book Store</h1>
+        </div>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="catalogue.php">Catalogue</a></li>
-            <li><a href="registration.html">Registration</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalogue.php">Catalogue</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <!-- Add Logout link -->
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
     </nav>
-    <section>
-        <!-- Display the catalog -->
-        <?php
-        if ($result->num_rows > 0) {
-            echo "<ul>";
-            while($row = $result->fetch_assoc()) {
-                echo "<li>" . $row["title"] . " by " . $row["author"] . " - $" . $row["price"] . " ";
-                echo "<a href='buy.php?id=" . $row["id"] . "'>Buy</a></li>";
+    <section class="catalogue-section">
+        <div class="container">
+            <h2>Discover Our Catalog</h2>
+
+            <!-- Display books dynamically -->
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='book-card'>";
+                  
+                    echo "<h3>{$row['title']}</h3>";
+                    echo "<p>Author: {$row['author']}</p>";
+                    echo "<p>Price: $" . number_format($row['price'], 2) . "</p>";
+                    echo "<button class='buy-button'>Buy Now</button>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>No books available at the moment.</p>";
             }
-            echo "</ul>";
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
-        ?>
+
+            $conn->close();
+            ?>
+            
+        </div>
     </section>
     <footer>
-        <p>&copy; 2023 Online Book Store</p>
+        <div class="container">
+            <p>&copy; 2023 Online Book Store</p>
+        </div>
     </footer>
 </body>
 </html>
