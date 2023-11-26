@@ -8,6 +8,13 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
+// Check if a book was added successfully and show an alert
+if (isset($_SESSION['book_added']) && $_SESSION['book_added']) {
+    echo '<script>alert("Book added successfully!");</script>';
+    // Reset the session variable
+    $_SESSION['book_added'] = false;
+}
+
 // Assuming you have a database connection
 $servername = "localhost";
 $username = "root";
@@ -46,7 +53,6 @@ $result = $conn->query($sql);
                 <li><a href="login.html">Login</a></li>
                 <li><a href="catalogue.php">Catalogue</a></li>
                 <li><a href="registration.html">Registration</a></li>
-                <!-- Add Logout link -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
@@ -55,24 +61,45 @@ $result = $conn->query($sql);
         <div class="container">
             <h2>Discover Our Catalog</h2>
 
-            <!-- Display books dynamically -->
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='book-card'>";
-                  
-                    echo "<h3>{$row['title']}</h3>";
-                    echo "<p>Author: {$row['author']}</p>";
-                    echo "<p>Price: $" . number_format($row['price'], 2) . "</p>";
-                    echo "<button class='buy-button'>Buy Now</button>";
-                    echo "</div>";
+           <!-- Display books dynamically -->
+           <div class="book-container">
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='book-card'>";
+                       
+                        echo "<h3>{$row['title']}</h3>";
+                        echo "<p>Author: {$row['author']}</p>";
+                        echo "<p>Price: $" . number_format($row['price'], 2) . "</p>";
+                        echo "<button class='buy-button'>Buy Now</button>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>No books available at the moment.</p>";
                 }
-            } else {
-                echo "<p>No books available at the moment.</p>";
-            }
 
-            $conn->close();
-            ?>
+                $conn->close();
+                ?>
+            </div>
+
+            <!-- Add Book Form -->
+            <div class="add-book-form">
+                <h2>Add New Book</h2>
+                <form action="add_book.php" method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+
+                    
+
+                    <input type="submit" value="Add Book">
+                </form>
+            </div>
             
         </div>
     </section>
