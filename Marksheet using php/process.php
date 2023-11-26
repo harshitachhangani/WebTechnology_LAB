@@ -4,10 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "bookstore";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $roll_number = mysqli_real_escape_string($conn, $_POST['roll_number']);
@@ -29,7 +29,10 @@ $sql = "INSERT INTO student_results (roll_number, subject1_mse, subject1_ese, su
         VALUES ('$roll_number', $subject1_mse, $subject1_ese, $subject2_mse, $subject2_ese, $subject3_mse, $subject3_ese, $subject4_mse, $subject4_ese, $total_marks)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record inserted successfully";
+    // Redirect to marksheet page
+    header("Location: results.php?id=" . mysqli_insert_id($conn));
+
+    exit(); // Ensure that subsequent code is not executed after redirection
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

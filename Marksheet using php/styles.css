@@ -34,3 +34,64 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+    margin: 5px 0;
+}
+
+p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.marksheet {
+    text-align: center;
+}
+
+.student-info {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.total {
+    margin-top: 20px;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
