@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Numbers Sorting</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main class="container">
+        <h1>Numbers Sorting</h1></br>
+        <div class="input-container">
+            <h2>Add Numbers</h2>
+            <input id="number" type="text" placeholder="Enter a number">
+            <button id="add" onclick="addToOption()">Add</button>
+        </div>
+        <div class="options-container">
+            <h2>Options</h2>
+            <select multiple="multiple" id="listBoxID"></select>
+        </div>
+        <div class="actions-container">
+            <button id="sort" onclick="sort()">Sort</button>
+            <button id="clear" onclick="clearOptions()">Clear</button>
+        </div>
+        <div class="search-container">
+            <h2>Search Option</h2>
+            <input id="searchInput" type="text" placeholder="Search an option">
+            <button id="search" onclick="search()">Search</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Number Sorting App</p>
+       
+    </footer>
+    
+
+    <script>
+        function addToOption() {
+            var num = parseInt(document.getElementById("number").value);
+            var selectBox = document.getElementById("listBoxID");
+            var option = document.createElement("option");
+            option.text = num;
+    
+            selectBox.add(option);
+        }
+    
+        function sort() {
+            var selectBox = document.getElementById("listBoxID");
+            var options = Array.from(selectBox.options);
+    
+            options.sort((a, b) => a.text.localeCompare(b.text, undefined, { numeric: true }));
+    
+            selectBox.innerHTML = "";
+            options.forEach(option => selectBox.add(option));
+        }
+    
+        function clearOptions() {
+            var selectBox = document.getElementById("listBoxID");
+            selectBox.innerHTML = "";
+        }
+    
+        function search() {
+            var searchInput = document.getElementById("searchInput").value.trim();
+    var selectBox = document.getElementById("listBoxID");
+    var options = selectBox.options;
+    var optionFound = false;
+    
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text.trim();
+        if (optionText === searchInput) {
+            option.selected = true;
+            optionFound = true;
+        } else {
+            option.selected = false;
+        }
+    }
+    
+    if (!optionFound) {
+        alert("Option not present");
+    }
+        }
+    </script>
+</body>
+
+</html>

@@ -58,25 +58,25 @@ mysqli_close($conn);
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Subject 1</td>
+                        <td>Design and Analysis of Algorithm</td>
                         <td><?php echo isset($row['subject1_mse']) ? $row['subject1_mse'] : 'N/A'; ?></td>
                         <td><?php echo isset($row['subject1_ese']) ? $row['subject1_ese'] : 'N/A'; ?></td>
                     </tr>
 
                     <tr>
-                        <td>Subject 1</td>
+                        <td>Web Technology</td>
                         <td><?php echo isset($row['subject2_mse']) ? $row['subject2_mse'] : 'N/A'; ?></td>
                         <td><?php echo isset($row['subject2_ese']) ? $row['subject2_ese'] : 'N/A'; ?></td>
                     </tr>
 
                     <tr>
-                        <td>Subject 1</td>
+                        <td>Computer Networks</td>
                         <td><?php echo isset($row['subject3_mse']) ? $row['subject3_mse'] : 'N/A'; ?></td>
                         <td><?php echo isset($row['subject3_ese']) ? $row['subject3_ese'] : 'N/A'; ?></td>
                     </tr>
 
                     <tr>
-                        <td>Subject 1</td>
+                        <td>Software Design and Modeling</td>
                         <td><?php echo isset($row['subject4_mse']) ? $row['subject4_mse'] : 'N/A'; ?></td>
                         <td><?php echo isset($row['subject4_ese']) ? $row['subject4_ese'] : 'N/A'; ?></td>
                     </tr>

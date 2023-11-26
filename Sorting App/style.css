@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: #333;
+}
+
+h4 {
+    color: #666;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+select {
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#searchInput {
+    margin-top: 10px;
+}
+
+#listBoxID {
+    margin: 10px 0;
+}
+
+/* Add more styles as needed */
+/* Style for the navigation bar container */
+.navbar {
+    background-color: #333; /* Background color */
+    overflow: hidden; /* Clear floats */
+}
+
+/* Style for the navigation bar list */
+.navbar ul {
+    list-style-type: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+/* Style for the navigation bar container */
+.navbar {
+    background-color: #333; /* Background color */
+    overflow: hidden; /* Clear floats */
+}
+
+/* Style for the navigation bar list */
+.navbar ul {
+    list-style-type: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Style for the navigation bar list items */
+.navbar li {
+    float: left; /* Float the list items horizontally */
+    margin-right: 20px; /* Spacing between list items */
+}
+
+/* Style for the navigation bar links */
+.navbar a {
+    display: block; /* Make links block-level for better spacing */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underlines */
+    padding: 10px 20px; /* Padding for the links */
+}
+
+/* Style for the navigation bar links on hover */
+.navbar a:hover {
+    background-color: #555; /* Background color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+
+
+/* footer */
+/* Style for the footer container */
+.footer {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Padding for the footer content */
+}
+
+/* Style for the footer links */
+.footer a {
+    color: #fff; /* Text color for links */
+    text-decoration: none; /* Remove underlines */
+    margin: 0 10px; /* Spacing between links */
+}
+
+/* Style for the footer links on hover */
+.footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+/* Style for the Add button */
+#add {
+    background-color: #007BFF; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Style for the Add button on hover */
+#add:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+
+/* Style for the Sort button */
+#sort {
+    background-color: #28A745; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Style for the Sort button on hover */
+#sort:hover {
+    background-color: #1e8c3d; /* Background color on hover */
+}
+
+/* Style for the Clear button */
+#clear {
+    background-color: #FFC107; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Style for the Clear button on hover */
+#clear:hover {
+    background-color: #d89d02; /* Background color on hover */
+}
+
+/* Style for the Search button */
+#search {
+    background-color: #17A2B8; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Style for the Search button on hover */
+#search:hover {
+    background-color: #128a9b; /* Background color on hover */
+}
