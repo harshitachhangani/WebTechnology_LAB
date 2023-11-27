@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Example</title>
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    li:hover {
+      background-color: #f0f0f0;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    #addItemInput, #newElementInput {
+      width: calc(100% - 20px);
+    }
+
+    #addItemButton, #copyButton, #addElementForm button {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #addItemButton:hover, #copyButton:hover, #addElementForm button:hover {
+      background-color: #45a049;
+    }
+
+    #copyButton {
+      margin-top: 10px;
+    }
+
+    #addElementForm {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .new-element {
+      background-color: #d3ffd3;
+      padding: 15px;
+      margin-top: 10px;
+      border: 1px solid #7dbd7d;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .new-element:hover {
+      background-color: #c2f0c2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>List 1</h2>
+    <div>
+      <input type="text" id="addItemInput" placeholder="Enter item">
+      <button id="addItemButton">Add to List 1</button>
+    </div>
+    <ul id="list1">
+      <!-- List 1 items will be displayed here -->
+    </ul>
+
+    <button id="copyButton">Copy to List 2</button>
+
+    <h2>List 2</h2>
+    <ul id="list2">
+      <!-- List 2 items will be displayed here -->
+    </ul>
+
+    <h2>Create New Element</h2>
+    <form id="addElementForm">
+      <label for="newElementInput">New Element:</label>
+      <input type="text" id="newElementInput" placeholder="Enter element">
+      <button type="submit">Add Element</button>
+    </form>
+
+    <div id="newElementsContainer">
+      <!-- Newly created elements will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    // Add item to List 1
+    $('#addItemButton').on('click', function() {
+      var newItem = $('#addItemInput').val();
+      if (newItem) {
+        $('<li>').text(newItem).appendTo('#list1');
+        $('#addItemInput').val('');
+      }
+    });
+
+    // Copy contents from list1 to list2
+    $('#copyButton').on('click', function() {
+      $('#list1 li').clone().appendTo('#list2');
+    });
+
+    // Add new element to the HTML page
+    $('#addElementForm').on('submit', function(event) {
+      event.preventDefault();
+      var newElementText = $('#newElementInput').val();
+      if (newElementText) {
+        var newElement = $('<div>').text(newElementText).addClass('new-element');
+        $('#newElementsContainer').append(newElement);
+        $('#newElementInput').val('');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+1. CV website with video background using Bootstrap and jQuery.
+2. Website with toggle-able tabs in nav bar showing subject details with Bootstrap and js.
+3. Searching and sorting using JS and Array of elements in JS and using jQuery change properties of the array. 
+4. Design a responsive website to calculate Electricity bill using PHP/
+5. Electricity bill using SPRINGBOOT/REACT.
+6. React or springboot website for VIT Results App.
+7. Semester results using PHP and MySQL.
+8. Semester results using JS, MySQL and Node.js
+9. Online bookstore using Springboot and MySQL.
+10. Online bookstore with React and Node.
+13. Design Login System in php simple user registration and login form to demonstrate use of cookies
+14. Student attendance System using PHP and MySql A) Student must be able to register and B} Teacher Should be able to take attendance online using the checkboxes - Roll number and Name php and Mysql and Anything in frontend
+15. Online Shopping System where farmer can buys and sell farming product using php and mysql
+16. design and develop php scripts to limit maximum number of concurrent sessions for user. Means if one account is logged in from mobile laptop and computer so it should not allow 4th login from that same account. Limit the session. Track how many sessions are going on
+17. design and develop springboot application where employees record can be added and employee list could be listed as json format using postman as client or chrome simply write record in form of json upload and download. no need for react or html.
+18. design and develop Springboot application to add and delete and list student record using JPA and MySQL. Use JPA ( Java Persistant api for connecting to MySql) use react as frontend or any default HTML page.
+19. Design and Develop PHP application to add employee record and list employee records on the web page using PHP (add , delete, Modify or list)
+20. design and develop PHP application add , delete , list, Student Records, use css for styling and javascript for validation the form.
+21. demonstarte jquery for coping contents from one list control to another list control also demonstrte how to create new element in html page using jquery
+22. wrtite a Php script to transform String all Uppercase letter . a text filed will be there. in textfield if we type something it should appear as uppercase letters. or we can transform it from uppercase to lower case letter(means button of transform after clicking on which below it will displayed in uppercase letter) or we can make all charters of string in uppercase using string functions in php.
+23. web application using php and mysql for registering complaint for students in college using php and mysql complaint about anything like facilities or anything like 1. Create login page for student 2. Create complaint page for student 3. Create login page for admin 4. List all the complaint on Admin page Login (something like using VIT id )
+24. write react application for registering complaints for students in college using react and node js and anything as database mysql or mongo db. complaint about anything like facilites or anything like 1. Create login page for students 2. Create complaint page for students 3. create login page for sdmin 4. list all complain on admin page login (something like using VIT id)
+25. create webpage for simple calculator with functionaliye  ( + * - / ) using html . we have to show text field accept 1st number then operator and 2nd number and after clicking on " = " it should show result in same text field event handling, html and css and js or jquery
+26. Develop Currency Convertor using react js that allows user to input amount in dollar and and convert it into rs. we can use hard coded exchange rate. use react state and event handler to  manage input and conversion calculations.
+27. Develop Currency Convertor using php that allows user to input amount in dollae and and convert it into rs. we can use hard coded exchange rate.
+28. Develop responsive web application using php, springboot, mysql for restaurent order management make assumptions whenever required
+29. design and develop chessboard. Draw table and alternate cells should be made blank and remaing cells white. just show sqares. use javascript it should be strictly responsive.
+30. design following responsive layout using HTMl: use header, footer and appropriate tags. we can have pattern like left menu right menu top haeder and buttom hearder and sections inside
