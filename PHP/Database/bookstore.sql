@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306:3306
--- Generation Time: Nov 28, 2023 at 03:03 PM
+-- Generation Time: Nov 28, 2023 at 05:38 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -39,8 +39,8 @@ CREATE TABLE `attendance` (
 --
 
 INSERT INTO `attendance` (`id`, `student_id`, `attendance_date`, `status`) VALUES
-(1, 1, '2023-11-28', 'Present'),
-(2, 2, '2023-11-28', 'Absent');
+(3, 1, '2023-11-28', 'Present'),
+(4, 2, '2023-11-28', 'Absent');
 
 -- --------------------------------------------------------
 
@@ -74,16 +74,18 @@ INSERT INTO `books` (`id`, `title`, `author`, `price`) VALUES
 CREATE TABLE `class_students` (
   `id` int(11) NOT NULL,
   `roll_number` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `class_students`
 --
 
-INSERT INTO `class_students` (`id`, `roll_number`, `name`) VALUES
-(1, 44, 'Harshita'),
-(2, 11, 'Riya');
+INSERT INTO `class_students` (`id`, `roll_number`, `name`, `username`, `password`) VALUES
+(1, 1, 'Riya', 'riya', '$2y$10$goC0X.TM1jw2cXvTcUI7Le.WK7SP7DZsKejD86/Px5quLeCgeIHbG'),
+(2, 2, 'Ayush ', 'ayush', '$2y$10$5wwjQfIUdB/rbbFt94iA5.fnwxAr6LxD1xlWotlIzIjCBpDbEv2AG');
 
 -- --------------------------------------------------------
 
@@ -493,7 +495,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `books`

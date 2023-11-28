@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Student Registration</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,7 +35,6 @@
             color: #555;
         }
 
-        select,
         input {
             width: 100%;
             padding: 10px;
@@ -43,20 +42,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-        }
-
-        p {
-            margin-top: 5px;
-            color: #777;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         input[type="submit"] {
@@ -73,33 +58,54 @@
             background-color: #45a049;
         }
     </style>
-    <script>
-        function toggleRegistrationLink() {
-            var role = document.getElementById("role").value;
-            var registerLink = document.getElementById("register-link");
-
-            if (role === "student") {
-                registerLink.style.display = "block";
-            } else {
-                registerLink.style.display = "none";
-            }
-        }
-    </script>
 </head>
 <body>
-    <form action="login.php" method="post">
-        <h2>Login</h2>
-        <label for="role">Role:</label>
-        <select id="role" name="role" required onchange="toggleRegistrationLink()">
-            <option value="teacher">Teacher</option>
-            <option value="student">Student</option>
-        </select>
+    <form action="register_student.php" method="post">
+        <h2>Student Registration</h2>
+        <label for="roll_no">Roll No:</label>
+        <input type="text" name="roll_no" required>
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
         <label for="username">Username:</label>
         <input type="text" name="username" required>
         <label for="password">Password:</label>
         <input type="password" name="password" required>
-        <p id="register-link" style="display: none;">Don't have a student account? <a href="register_student.php">Create one</a></p>
-        <input type="submit" value="Login">
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the submitted data
+    $roll_number = $_POST["roll_no"];
+    $name = $_POST["name"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Perform any additional validation or checks as needed
+
+    // You should hash the password before storing it in the database for security
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert the student data into the database (replace with your database connection code)
+    $connection = mysqli_connect("localhost", "root", "", "bookstore");
+
+    if (!$connection) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $insertQuery = "INSERT INTO class_students (roll_number, name, username, password) VALUES ('$roll_number', '$name', '$username', '$hashedPassword')";
+
+    if (mysqli_query($connection, $insertQuery)) {
+        echo '<script>alert("Registration successful. You can now log in as a student.");</script>';
+        echo '<script>window.location.href = "index.php";</script>';
+        exit();
+    } else {
+        echo "Error: " . $insertQuery . "<br>" . mysqli_error($connection);
+    }
+
+    mysqli_close($connection);
+}
+?>
